@@ -21,29 +21,98 @@
 */
 
 // let priceDisplay = document.getElementById("price")
+const checkIn = document.getElementById("checkin");
+const checkOut = document.getElementById ("checkout");
+const getCities = document.getElementById ("cities");
+const getAdultNumber = document.getElementById ("adult-number");
+const submitResult = document.getElementById ("submitButton");
+const printResult = document.querySelector (".listOfResults");
 
-let destination = [Pattaya, Bangkok, ChianMai, KoSamui, Phuket];
 
-let Pattaya = 293915;
-let Bangkok = 293916;
-let ChiangMai = 293917;
-let KoSamui = 293918;
-let Phuket = 293920;
+let citySelection = null;
+// let destination = [Pattaya, Bangkok, ChianMai, KoSamui, Phuket];
+function handleSelection(){
+    citySelection = document.querySelector("#countries").value;
+}
+// make an array by location and id 
+// loop throw array to find selection
+let cities = {
+    "Pattaya" : 293915,
+    "Bangkok" : 293916,
+    "ChiangMai" : 293917,
+    "KoSamui" : 293918,
+    "Phuket" : 293920,
+}
+console.log (cities["Pattaya"]);
+function pickCities (getCityName) {
+    for (let i = 0; i < cities.length; i++) {
+    if (citySelection === getCityName[i]){
 
-async function testOut() {
-    const test = await fetch(`https://travel-advisor.p.rapidapi.com/attractions/list?location_id=${}&currency=USD&lang=en_US&lunit=km&sort=recommended`, {
+        } return cities.value;
+    } 
+}
+
+async function getActivities() {
+    const getData = await fetch("https://travel-advisor.p.rapidapi.com/attractions/list?location_id=293918&currency=USD&lang=en_US&lunit=km&sort=recommended", {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c55d2d23f7msh63ff74ae914833dp1b1565jsnb15ec0c1c3db",
             "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
         }
     })
-    const response = await test.json();
+    const response = await getData.json();
     console.log(response);
-    const fullPrice = response.searchResults[0];
-    priceDisplay.innerHTML = fullPrice;
+    const getActivitiesName = response.data[5].name;
+    console.log(getActivitiesName);
+    const getRanking = response.data[5].ranking;
+    console.log(getRanking);
+    const getPrice = response.data[5].offer_group.offer_list[0].price;
+    console.log(getPrice)
+    const getTitle = response.data[5].offer_group.offer_list[0].title;
+    console.log (getTitle);
+    const getImage = response.data[5].photo.images.medium.url;
+    console.log(getImage);
+    //get second result
+    const getActivitiesName2 = response.data[9].name;
+    console.log(getActivitiesName2);
+    const getRanking2 = response.data[9].ranking;
+    console.log(getRanking2);
+    const getPrice2 = response.data[9].offer_group.offer_list[0].price;
+    console.log(getPrice2)
+    const getTitle2 = response.data[9].offer_group.offer_list[0].title;
+    console.log (getTitle2);
+    const getImage2 = response.data[9].photo.images.medium.url;
+    console.log(getImage2);
+
+    //get third result
+    const getActivitiesName3 = response.data[8].name;
+    console.log(getActivitiesName3);
+    const getRanking3 = response.data[8].ranking;
+    console.log(getRanking3);
+    const getPrice3 = response.data[8].offer_group.offer_list[0].price;
+    console.log(getPrice3)
+    const getTitle3 = response.data[8].offer_group.offer_list[0].title;
+    console.log (getTitle3);
+    const getImage3 = response.data[8].photo.images.medium.url;
+    console.log(getImage3);
+
+    // let displayResult = document.createElement("p");
+    printResult.innerHTML = getPrice3;
+    // displayResult.innerHTML = getPrice3;
+    // const getImage =  response.data[5].offer_group.offer_list[0].image_url;
+    // console.log(getImage);
+    // priceDisplay.innerHTML = getActivitiesName;
 }
-testOut();
+getActivities();
+
+submitResult.addEventListener("click", getActivities);
 
 
+// function addActivitiesToList(string){
+//     let li = document.createElement("li");
+//     let listItem = document.createTextNode(string)
+//     li.appendChild(listItem);
+//     printResult.appendChild(li);
+    
+// }
 
