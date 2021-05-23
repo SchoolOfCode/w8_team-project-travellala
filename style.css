@@ -1,4 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
 
 * {
   margin: 0;
@@ -9,7 +18,8 @@
 body {
   background-image: url("https://wallpaperaccess.com/full/150575.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 150%;
+  height: 1000px;
 }
 nav {
   overflow: hidden;
@@ -76,7 +86,7 @@ h1 {
   font-size: 15px;
   position: absolute;
   left: 300px;
-  top: 500px;
+  top: 800px;
 }
 
 #submitButton {
@@ -85,6 +95,7 @@ h1 {
 
 #aboutUs {
   font-size: 20px;
+  text-align: center;
 }
 
 .contactInfo {
@@ -102,4 +113,29 @@ h1 {
   display: grid;
   grid-gap: 25px;
   grid-template: auto/repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.input {
+  text-align: center;
+  margin: 100px 0;
+}
+
+input[type="text"] {
+  height: 50px;
+  width: 600px;
+  background-color: #e7e7e7;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
+}
+
+input[type="submit"] {
+  height: 50px;
+  width: 100px;
+  background-color: #e7e7e7;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
 }
