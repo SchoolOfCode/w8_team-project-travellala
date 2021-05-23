@@ -97,7 +97,7 @@ async function getActivities() {
     console.log(getImage3);
 
     // let displayResult = document.createElement("p");
-    printResult.innerHTML = getPrice3;
+    // printResult.innerHTML = getPrice3;
     // displayResult.innerHTML = getPrice3;
     // const getImage =  response.data[5].offer_group.offer_list[0].image_url;
     // console.log(getImage);
