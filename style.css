@@ -11,6 +11,7 @@
 
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -130,4 +131,60 @@ h1 {
   /* justify-content: right; */
   font-size: 20px;
   font-weight: bolder;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#activity-result {
+  display: flex;
+  flex-direction: row;
+}
+
+#search-results {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-gap: 25px;
+  grid-template: auto/repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 200px;
+}
+
+.activities-data {
+  width: 100%;
+  border-radius: 8px;
+  background-color: lightgrey;
+  padding: 15px;
+  overflow: hidden;
+  margin: 20px 20px;
+}
+
+.item-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activities-label {
+  text-decoration: none;
+  text-align: center;
+  width: 130px;
+  padding: 10px 0;
+  background-color: grey;
+  color: #264e70;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  align-self: flex-start;
+}
+.title {
+  color: black;
+  margin: 20px 10px 0 0;
+  font-size: 1.8rem;
+  font-weight: 400px;
+}
+
+.activities-data {
+  color: #264e70;
+  align-items: center;
 }
