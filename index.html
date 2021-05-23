@@ -19,17 +19,17 @@
         <h1>Welcome to TraveLALA.&#x26C5; <br>
              Book your holiday to your dream destination now!<br></h1>
         <section class="formContainer">
-            <form class="formContainer">
+            <form>
                 <label for="date">Check in:
                     <input type="date" id="checkin" name="date-for-experience" min="2021-01-01" max="2121-12-31" required />
                 </label><br>
             </form>
-            <form class="formContainer">
+            <form>
                 <label for="date">Check out:
                     <input type="date" id="checkout" name="date-for-experience" min="2021-01-01" max="2121-12-31" required />
                 </label><br>
             </form>
-            <form class="formContainer" id="">
+            <form>
                 <label for="cities">Choose destination</label>
                    <select id="cities" name="cities">
                     <option value="Pattaya">Pattaya</option>
@@ -39,7 +39,7 @@
                     <option value="Phuket">Phuket</option>
                   </select>
             </form>
-            <form class="formContainer">
+            <form>
                 <label for="adult-number">Number of Adults</label>
                    <select id="adult-number" name="adult-number">
                     <option value="1">1</option>
@@ -48,10 +48,22 @@
                     <option value="4">4</option>
                   </select>
             </form>
-            <button class="" id="submitButton">Submit</button>
+            <button class="formContainer" id="submitButton">Submit</button>
+            
         </section>
-              
-        <p class="listOfResults">
+        
+        <section class="weather">
+            <form>
+                <label for="weather">Check Weather:
+                    <input type="text"/>
+                </label>
+                <button>Check Weather</button>
+            </form>
+        </section>
+        <!-- <h2>Show Wheather</h2>
+        <ol id="showWeather"></ol>
+        
+        <p class="listOfResults"> -->
 
         </p>
 
