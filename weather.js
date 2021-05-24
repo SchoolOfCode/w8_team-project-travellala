@@ -12,8 +12,8 @@ async function fetchWeather() {
 // const newWeatherButton = document.getElementById("submitButton");
 // newWeatherButton.addEventListener("click", fetchWeather);
 // const ol = document.getElementById("showWeather");
-const getTemperature = dataResponse[1].main.temp
-console.log(getTemperature)
+// const getTemperature = dataResponse.main.temp
+// console.log(getTemperature)
 
 // function addWeather(string){
 //     let li = document.createElement("li");

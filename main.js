@@ -58,7 +58,7 @@ function changeLocationId() {
  let location = document.getElementById("cities");
  let locationValue = location.value;
  if (locationValue === "Pattaya"){
-     locationNumber = 293915;
+     locationNumber = 293919;
  }else if (locationValue === "Bangkok") {
     locationNumber = 293916;
  }else if (locationValue === "ChiangMai"){
@@ -75,7 +75,7 @@ function changeLocationId() {
 
 async function getActivities() {
     changeLocationId(locationNumber);
-    const getData = await fetch(`https://travel-advisor.p.rapidapi.com/attractions/list?location_id=${locationNumber}&currency=USD&lang=en_US&lunit=km&sort=recommended`, {
+    const getData = await fetch(`https://travel-advisor.p.rapidapi.com/attractions/list?location_id=${locationNumber}&currency=GBP&lang=en_US&lunit=km&sort=recommended`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c55d2d23f7msh63ff74ae914833dp1b1565jsnb15ec0c1c3db",
