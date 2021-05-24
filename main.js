@@ -136,12 +136,15 @@ function generateActivities(results){
         generatedActivities +=
         `
         <article class="activities-data">
-           
+        <img class="activities-img" src="${result.photo.images.medium.url}" alt"" />
             <div class="item-result">
             <h2 class="title">${result.name}</h2>
             <a class="activities-label" href="${result.website}" target = "_blank">View website</a>
             </div>
             <p class="activities-data">Ranking : ${result.ranking}</p>
+            <p class="activities-data">Activity to do  : ${result['offer_group']['offer_list'][0].title}</p>
+            <p class="activities-data">Price : ${result['offer_group']['offer_list'][0].price}</p>
+            
             
         </article>
         
@@ -157,8 +160,7 @@ submitResult.addEventListener("click", getActivities);
 
 // tried to display image and price but getting an console.error 
 // <img class="activities-img" src="result.photo.images.medium.url" alt"" />
-// <p class="activities-data">Price : ${result['offer_group'].['offer_list'][0].price}</p>
-// <p class="activities-data">Activity to do  : ${result.['offer_group'].['offer_list'][0].title}</p>
+
 
 
 
