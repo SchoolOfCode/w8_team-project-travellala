@@ -53,29 +53,29 @@ const submitResult = document.getElementById ("submitButton");
 //         } return cities.value;
 //     } 
 // }
-// let locationNumber = 0;
-// function changeLocationId() {
-//  let location = document.getElementById("cities");
-//  let locationValue = location.value;
-//  if (locationValue === "Pattaya"){
-//      locationNumber = 293915;
-//  }else if (locationValue === "Bangkok") {
-//     locationNumber = 293916;
-//  }else if (locationValue === "ChiangMai"){
-//     locationNumber = 293917;
-//     console.log(locationNumber)
-//  }else if (locationValue === "KoSamui"){
-//     locationNumber = 293918;
-//  }else if(locationValue === "Phuket") {
-//     locationNumber = 293920;
-//  }
-// }
+let locationNumber = 0;
+function changeLocationId() {
+ let location = document.getElementById("cities");
+ let locationValue = location.value;
+ if (locationValue === "Pattaya"){
+     locationNumber = 293915;
+ }else if (locationValue === "Bangkok") {
+    locationNumber = 293916;
+ }else if (locationValue === "ChiangMai"){
+    locationNumber = 293917;
+    console.log(locationNumber)
+ }else if (locationValue === "KoSamui"){
+    locationNumber = 293918;
+ }else if(locationValue === "Phuket") {
+    locationNumber = 293920;
+ }
+}
 // console.log(locationNumber)
 
 
 async function getActivities() {
-    // changeLocationId(locationNumber);
-    const getData = await fetch("https://travel-advisor.p.rapidapi.com/attractions/list?location_id=293920&currency=USD&lang=en_US&lunit=km&sort=recommended", {
+    changeLocationId(locationNumber);
+    const getData = await fetch(`https://travel-advisor.p.rapidapi.com/attractions/list?location_id=${locationNumber}&currency=USD&lang=en_US&lunit=km&sort=recommended`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c55d2d23f7msh63ff74ae914833dp1b1565jsnb15ec0c1c3db",
@@ -152,6 +152,7 @@ function generateActivities(results){
     // generated div with the results from the mapp array method
 displaySection.innerHTML = generatedActivities;
 }
+
 submitResult.addEventListener("click", getActivities);
 
 // tried to display image and price but getting an console.error 
