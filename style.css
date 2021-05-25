@@ -184,3 +184,23 @@ h1 {
   height: 300px;
   border-radius: 4px;
 }
+
+/* #logo{
+  text-align: center;
+  padding-top: 40px;
+  /* margin: 40; */
+  font-family: 'Pattaya', sans-serif;
+  font-size: xx-large;
+}
+.h1{
+   font-family: 'Pattaya', sans-serif;
+}
+
+.menu {
+  padding-top: 40px;
+} */
+
+.fa-github {
+  background: #070707;
+  color: white;
+}

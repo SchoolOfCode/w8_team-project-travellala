@@ -7,12 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TraveLALA</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
+        <!-- <nav>
+            <p id="logo"> TraveLALA</p>
+        </nav> -->
         <nav>
-            <a href="#contact">Contact us</a>
+            <!-- <p id="logo"> TraveLALA</p> -->
+            <a href="https://github.com/SchoolOfCode/w8_team-project-travellala">Contact us</a>
             <a href="#aboutus"> About us</a>
             <a class="active" href="#home">Home</a>
 
@@ -25,17 +30,12 @@
                 Book Your Thai Holidays Activities Now!<br></h1>
             <section class="formContainer">
                 <form>
-                    <label for="date">Check in:
-                        <input type="date" id="checkin" name="date-for-experience" min="2021-01-01" max="2121-12-31"
+                    <label for="date">Date:
+                        <input type="date" id="checkin" name="date-for-experience" min="2021-05-26" max="2121-12-31"
                             required />
                     </label><br>
                 </form>
-                <form>
-                    <label for="date">Check out:
-                        <input type="date" id="checkout" name="date-for-experience" min="2021-01-01" max="2121-12-31"
-                            required />
-                    </label><br>
-                </form>
+
                 <form>
                     <label for="cities">Choose destination</label>
                     <select id="cities" name="cities">
@@ -82,7 +82,8 @@
     <script src="weather.js"></script>
 </body>
 <footer class="contactInfo" id="contact">
-    <a>You can contact us on slack at @YonisElmi @ClaudiuManta @Shola Quadri</a>
+    <p>You can contact us on Slack at @YonisElmi @ClaudiuManta @SholaQuadri</p>
+    <a href="https://github.com/SchoolOfCode/w8_team-project-travellala" class="fa fa-github"></a>
 </footer>
 
 </html>
