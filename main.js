@@ -21,57 +21,30 @@
 */
 const displaySection = document.getElementById("display-location");
 // const getAdultNumber = document.getElementById ("adult-number");
-const submitResult = document.getElementById ("submitButton");
+const submitResult = document.getElementById("submitButton");
 
-// let priceDisplay = document.getElementById("price")
-// const checkIn = document.getElementById("checkin");
-// const checkOut = document.getElementById ("checkout");
-// const getCities = document.getElementById ("cities");
+// function call to select city by user selection 
 
-// const printResult = document.querySelector (".listOfResults");
-
-
-// let citySelection = null;
-// // let destination = [Pattaya, Bangkok, ChianMai, KoSamui, Phuket];
-// function handleSelection(){
-//     citySelection = document.querySelector("#countries").value;
-// }
-// make an array by location and id 
-// loop throw array to find selection
-// let cities = {
-//     "Pattaya" : 293915,
-//     "Bangkok" : 293916,
-//     "ChiangMai" : 293917,
-//     "KoSamui" : 293918,
-//     "Phuket" : 293920,
-// }
-// console.log (cities["Pattaya"]);
-// function pickCities (getCityName) {
-//     for (let i = 0; i < cities.length; i++) {
-//     if (citySelection === getCityName[i]){
-
-//         } return cities.value;
-//     } 
-// }
 let locationNumber = 0;
 function changeLocationId() {
- let location = document.getElementById("cities");
- let locationValue = location.value;
- if (locationValue === "Pattaya"){
-     locationNumber = 293919;
- }else if (locationValue === "Bangkok") {
-    locationNumber = 293916;
- }else if (locationValue === "ChiangMai"){
-    locationNumber = 293917;
-    console.log(locationNumber)
- }else if (locationValue === "KoSamui"){
-    locationNumber = 293918;
- }else if(locationValue === "Phuket") {
-    locationNumber = 293920;
- }
+    let location = document.getElementById("cities");
+    let locationValue = location.value;
+    if (locationValue === "Pattaya") {
+        locationNumber = 293919;
+    } else if (locationValue === "Bangkok") {
+        locationNumber = 293916;
+    } else if (locationValue === "ChiangMai") {
+        locationNumber = 293917;
+        console.log(locationNumber)
+    } else if (locationValue === "KoSamui") {
+        locationNumber = 293918;
+    } else if (locationValue === "Phuket") {
+        locationNumber = 293920;
+    }
 }
 // console.log(locationNumber)
 
+// async function to get location and activity from API 
 
 async function getActivities() {
     changeLocationId(locationNumber);
@@ -86,55 +59,18 @@ async function getActivities() {
     console.log(response);
     const result = response.data;
     // used .slice methos to grab only 3 items from the array
-    generateActivities(result.slice(1,4));
-    // const getActivitiesName = response.data[5].name;
-    // console.log(getActivitiesName);
-    // const getRanking = response.data[5].ranking;
-    // console.log(getRanking);
-    // const getPrice = response.data[5].offer_group.offer_list[0].price;
-    // console.log(getPrice)
-    // const getTitle = response.data[5].offer_group.offer_list[0].title;
-    // console.log (getTitle);
-    // const getImage = response.data[5].photo.images.medium.url;
-    // console.log(getImage);
-    // //get second result
-    // const getActivitiesName2 = response.data[9].name;
-    // console.log(getActivitiesName2);
-    // const getRanking2 = response.data[9].ranking;
-    // console.log(getRanking2);
-    // const getPrice2 = response.data[9].offer_group.offer_list[0].price;
-    // console.log(getPrice2)
-    // const getTitle2 = response.data[9].offer_group.offer_list[0].title;
-    // console.log (getTitle2);
-    // const getImage2 = response.data[9].photo.images.medium.url;
-    // console.log(getImage2);
+    generateActivities(result.slice(1, 4));
 
-    // //get third result
-    // const getActivitiesName3 = response.data[8].name;
-    // console.log(getActivitiesName3);
-    // const getRanking3 = response.data[8].ranking;
-    // console.log(getRanking3);
-    // const getPrice3 = response.data[8].offer_group.offer_list[0].price;
-    // console.log(getPrice3)
-    // const getTitle3 = response.data[8].offer_group.offer_list[0].title;
-    // console.log (getTitle3);
-    // const getImage3 = response.data[8].photo.images.medium.url;
-    // console.log(getImage3);
-
-    // let displayResult = document.createElement("p");
-    // printResult.innerHTML = getPrice3;
-    // displayResult.innerHTML = getPrice3;
-    // const getImage =  response.data[5].offer_group.offer_list[0].image_url;
-    // console.log(getImage);
-    // priceDisplay.innerHTML = getActivitiesName;
 }
-// getActivities();
 
-function generateActivities(results){
+// function to generate and display activities on html 
+
+function generateActivities(results) {
     let generatedActivities = "";
+    // use map to create new modified arrays 
     results.map((result) => {
         generatedActivities +=
-        `
+            `
         <article class="activities-data">
         <img class="activities-img" src="${result.photo.images.medium.url}" alt"" />
             <div class="item-result">
@@ -153,22 +89,11 @@ function generateActivities(results){
     })
     // populate search result section by changing the inner HTML with the
     // generated div with the results from the mapp array method
-displaySection.innerHTML = generatedActivities;
+    displaySection.innerHTML = generatedActivities;
 }
 
+
+// event listener for button click
 submitResult.addEventListener("click", getActivities);
 
-// tried to display image and price but getting an console.error 
-// <img class="activities-img" src="result.photo.images.medium.url" alt"" />
-
-
-
-
-// function addActivitiesToList(string){
-//     let li = document.createElement("li");
-//     let listItem = document.createTextNode(string)
-//     li.appendChild(listItem);
-//     printResult.appendChild(li);
-    
-// }
 

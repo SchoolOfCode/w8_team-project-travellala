@@ -1,95 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TraveLALA</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <a class="active" href="#home">Home</a>
-            <a href="#aboutus"> About us</a>
             <a href="#contact">Contact us</a>
+            <a href="#aboutus"> About us</a>
+            <a class="active" href="#home">Home</a>
+
+
         </nav>
     </header>
     <main>
-       <section class="block">
-        <h1>Welcome to TraveLALA<br>
-             Book Your Thai Holidays Activities Now!<br></h1>
-        <section class="formContainer">
-            <form>
-                <label for="date">Check in:
-                    <input type="date" id="checkin" name="date-for-experience" min="2021-01-01" max="2121-12-31" required />
-                </label><br>
-            </form>
-            <form>
-                <label for="date">Check out:
-                    <input type="date" id="checkout" name="date-for-experience" min="2021-01-01" max="2121-12-31" required />
-                </label><br>
-            </form>
-            <form>
-                <label for="cities">Choose destination</label>
-                   <select id="cities" name="cities">
-                    <option value="Pattaya">Pattaya</option>
-                    <option value="Bangkok">Bangkok</option>
-                    <option value="ChiangMai">Chiang Mai</option>
-                    <option value="KoSamui">Ko Samui</option>
-                    <option value="Phuket">Phuket</option>
-                  </select>
-            </form>
-            <form>
-                <label for="adult-number">Number of Adults</label>
-                   <select id="adult-number" name="adult-number">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-            </form>
-            <button class="formContainer" id="submitButton">Submit</button>
-            
-        </section>
-        
-        <section class="weather">
-            <form>
-                <label for="weather">Check Weather:
-                    <input type="text"/>
-                </label>
-                <button>Check Weather</button>
-            </form>
-        </section>
-        <section id="display-location">
+        <section class="block">
+            <h1>Welcome to TraveLALA<br>
+                Book Your Thai Holidays Activities Now!<br></h1>
+            <section class="formContainer">
+                <form>
+                    <label for="date">Check in:
+                        <input type="date" id="checkin" name="date-for-experience" min="2021-01-01" max="2121-12-31"
+                            required />
+                    </label><br>
+                </form>
+                <form>
+                    <label for="date">Check out:
+                        <input type="date" id="checkout" name="date-for-experience" min="2021-01-01" max="2121-12-31"
+                            required />
+                    </label><br>
+                </form>
+                <form>
+                    <label for="cities">Choose destination</label>
+                    <select id="cities" name="cities">
+                        <option class="city" value="Pattaya">Pattaya</option>
+                        <option class="city" value="Bangkok">Bangkok</option>
+                        <option class="city" value="ChiangMai">Chiang Mai</option>
+                        <option class="city" value="KoSamui">Ko Samui</option>
+                        <option class="city" value="Phuket">Phuket</option>
+                    </select>
+                </form>
+                <form>
+                    <label for="adult-number">Number of Adults</label>
+                    <select id="adult-number" name="adult-number">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </form>
+                <button class="formContainer" id="submitButton" onclick="fetchWeather()">Submit</button>
+
+            </section>
+
+
+            <section class="weather">
+                <div id="displayWeather"></div>
+            </section>
+            <section id="display-location">
                 <section id="search-results">
-        
-            </section>    
-        </section>
-        <!-- <h2>Show Wheather</h2>
-        <ol id="showWeather"></ol>
-        
-        <p class="listOfResults"> -->
 
-        <!-- </p> -->
+                </section>
+            </section>
 
-        <!-- <section class="activities" id="">
-            <a class="" id="" href="">Activity 1</a>
-        </section>
-        <section class="activities" id="">
-            <a class="" id="" href="">Activity 2</a>
-        </section>
-        <section class="activities" id="">
-            <a class="" id="" href="">Activity 3</a>
-        </section> -->
-        <section class="aboutUsContainer" id="aboutus">
-            <article id="about">
-            <h2 id="aboutUs">Who Are We</h2>
-                <p>Local business, made by travel enthusiasts for travel enthusiasts</p>
-                <p>We cater towards women, particulalry for age groups between 25-55</p>
-                <p>And many more!</p>
-            </article>   
-        </section>
+            <section class="aboutUsContainer" id="aboutus">
+                <article id="about">
+                    <h2 id="aboutUs">Who Are We</h2>
+                    <p>Local business, made by travel enthusiasts for travel enthusiasts</p>
+                    <p>We cater towards women, particulalry for age groups between 25-55</p>
+                    <p>And many more!</p>
+                </article>
+            </section>
     </main>
     <script src="main.js"></script>
     <script src="weather.js"></script>
@@ -97,4 +84,5 @@
 <footer class="contactInfo" id="contact">
     <a>You can contact us on slack at @YonisElmi @ClaudiuManta @Shola Quadri</a>
 </footer>
+
 </html>
