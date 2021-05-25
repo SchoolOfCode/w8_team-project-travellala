@@ -42,7 +42,8 @@ function changeLocationId() {
         locationNumber = 293920;
     }
 }
-// console.log(locationNumber)
+
+// Shola spoke to mentor who offered a different solution for function above 
 
 // async function to get location and activity from API 
 
